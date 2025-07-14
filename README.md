@@ -1,16 +1,6 @@
-[![Latest Version](https://img.shields.io/github/release/andresilvasantos/bitprophet.svg?style=flat-square)](https://github.com/andresilvasantos/bitprophet/releases) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/andresilvasantos/bitprophet.svg?maxAge=2400)](#)
-[![npm downloads](https://img.shields.io/npm/dt/bitprophet.svg?maxAge=7200)](https://www.npmjs.com/package/bitprophet)
 
-[![NPM](https://nodei.co/npm/bitprophet.png?compact=true)](https://npmjs.org/package/bitprophet)
-
-# WARNING: repository no longer maintained ⚠️
-This source code evolved into a full desktop trading application, to be launched in Q1 2022. 🚀  
-For more information, [follow me on Twitter](https://twitter.com/megaroads).  
-A big thank you to everyone who dedicated their time to help it grow.
-
-# BitProphet
-BitProphet is a node crypto trading platform for Binance exchange that uses chat bots as its interface. Its main purpose is the automation of trading techniques, but it can also be used as a simple order notification tracker or as an alert system for the most used technical indicators.
+# Crypto trading platform integrating with binance API
+This is a node crypto trading platform for Binance exchange that uses chat bots as its interface. Its main purpose is the automation of trading techniques, but it can also be used as a simple order notification tracker or as an alert system for the most used technical indicators.
 Suggestions and pull requests are very welcome!
 
 #### Features
@@ -21,7 +11,7 @@ Suggestions and pull requests are very welcome!
 * Create your own strategies
 * Be notified anywhere with Telegram or Discord
 
-![Telegram Interface](https://github.com/andresilvasantos/bitprophet/raw/master/pres/chat_example.png)
+![Telegram Interface](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/chat_example.png)
 
 #### Installation
 ```
@@ -82,7 +72,7 @@ In Telegram/Discord type __list__ and you'll see all the available strategies li
 If a strategy listed has the [PT] prefix, it means it has Paper Trading active.
 To start a strategy, just type __start strategy_id__. For example, __start buydip__.
 
-![Getting Started](https://github.com/andresilvasantos/bitprophet/raw/master/pres/getting_started.png)
+![Getting Started](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/getting_started.png)
 
 #### Adding Strategies
 Add the following option naming a new directory for your strategies.
@@ -147,7 +137,7 @@ Create your strategies based on the examples.
 * __pause__ - Pause system (ongoing trades won't be paused)
 * __restart__ - Kill BitProphet's process. Useful when using a keep alive process manager like [pm2](https://github.com/Unitech/pm2).
 
-![Profits Discord](https://github.com/andresilvasantos/bitprophet/raw/master/pres/chat_profits.png)
+![Profits Discord](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/chat_profits.png)
 
 #### Adding Custom Commands
 Add the following option naming a new directory for your commands.
@@ -175,4 +165,4 @@ Create in the same directory *test.js* and code it based on the examples.
 
 ---
 
-Thank you to all contributors: [supershwa](https://github.com/supershwa), [ionutgalita](https://github.com/ionutgalita)
+Thank you to all contributors.
