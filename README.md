@@ -1,4 +1,3 @@
-I will outline the core structure and key sections for a comprehensive README.md for a CalAI-like application. Since the search results lack specific technical details about CalAI's functions, I will define common features for a photo calorie app based on general health tech knowledge.
 
 ## 📋 Project Overview: CalAI - AI-Powered Calorie Tracker
 
