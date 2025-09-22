@@ -3,14 +3,6 @@
 
 **CalAI** is a serverless application that uses AI to estimate the calorie content and nutritional information of food from a photo. It provides a seamless alternative to manual food logging.
 
-```bash
-# Prerequisites: Node.js, Python, AWS CLI, AWS SAM CLI
-git clone <your-repository-url>
-cd calai-backend
-sam build
-sam deploy --guided
-```
-
 ## 🏗️ System Architecture
 
 The application uses an event-driven, serverless architecture on AWS for scalability and cost-efficiency.
