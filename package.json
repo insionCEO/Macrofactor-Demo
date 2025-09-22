@@ -1,33 +1,44 @@
 {
-  "name": "bitprophet",
-  "version": "0.6.19",
-  "description": "Crypto trading platform for Binance that uses chat bots as its interface",
-  "main": "bitprophet.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andresilvasantos/bitprophet.git"
+  "name": "fitness-webapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite --mode development\" \"node backend/server.js\"",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "author": "Andre Santos <andresantos@theonepixel.com>",
-  "license": "MIT",
-  "keywords": [
-    "crypto",
-    "trading",
-    "exchange",
-    "binance",
-    "alerts",
-    "notifications",
-    "bitcoin",
-    "telegram",
-    "discord"
-  ],
   "dependencies": {
-    "discord.js": "^11.3.2",
-    "node-binance-api": "^0.4.29",
-    "node-emoji": "^1.8.1",
-    "node-telegram-bot-api": "^0.30.0",
-    "shortid": "^2.2.8"
+    "@tailwindcss/vite": "^4.0.7",
+    "axios": "^1.7.9",
+    "bcryptjs": "^3.0.2",
+    "compromise": "^14.14.4",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.4.10",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "react": "^19.0.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-datepicker": "^8.1.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.7",
+    "vite": "^6.1.0"
   }
 }

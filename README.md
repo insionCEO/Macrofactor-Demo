@@ -1,168 +1,74 @@
+# FITTO
+FITTO is a fitness tracking web application that helps users monitor their daily caloric intake, exercise routines, weight progress, and nutrition goals. With an intuitive dashboard and smart data logging, FITTO makes fitness tracking seamless.
 
-# Crypto trading platform integrating with binance API
-This is a node crypto trading platform for Binance exchange that uses chat bots as its interface. Its main purpose is the automation of trading techniques, but it can also be used as a simple order notification tracker or as an alert system for the most used technical indicators.
-Suggestions and pull requests are very welcome!
+## 🚀 Features
 
-#### Features
-* Analyse hundreds of tokens in multiple intervals EVERY second
-* Technical Indicators (SMA, EMA, RSI, Stochastics, Bollinger Bands, Ichimoku and more)
-* Stop loss and trailing profits
-* Paper trading
-* Create your own strategies
-* Be notified anywhere with Telegram or Discord
+### 🏠 Dashboard
+- Displays Total Daily Energy Expenditure (TDEE) and Basal Metabolic Rate (BMR).
+- Tracks macronutrients (Carbs, Protein, Fat) with real-time updates.
+- Visual progress on weight tracking with an interactive graph.
+- Summary of exercise calories burned.
 
-![Telegram Interface](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/chat_example.png)
+### 🍽️ Food Log
+- Log meals by categories: Breakfast, Lunch, Dinner, Snacks.
+- Tracks calories and macronutrients for daily consumption.
+- Provides real-time updates on total calories consumed vs. TDEE.
 
-#### Installation
-```
-npm install bitprophet --save
-```
+### 💪 Exercise Log
+- Log workout sessions, including exercise name, duration, and calories burned.
+- Uses Metabolic Equivalent of Task (MET) for accurate calorie expenditure estimates.
+- Displays total calories burned per day.
 
-#### Setting Up Telegram Bot
-First, you'll need to create a bot for Telegram. Just talk to [BotFather](https://telegram.me/botfather) and follow simple steps until it gives you a token for it.
-You'll also need to create a Telegram group, the place where you and BitProphet will communicate. After creating it, add the bot as administrator (make sure to uncheck "All Members Are Admins").
+### ⚖️ Weight Tracker
+- Users can log and edit their weight history.
+- A visual weight progress chart to track changes over time.
+- Set a target weight goal and monitor progress with percentage completion.
 
-#### Setting Up Discord Bot (optional)
-Create a server and follow [these simple steps](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) until you have a token and added the bot to the server you've just created.
+### 🔒 Authentication & Security
+- JWT-based authentication for secure API requests.
+- User registration & login with encrypted passwords.
+- Protected routes requiring authentication.
 
-#### Retrieving Chat IDs
-In order to find out the chat id where your bot was added to, run node with the following code and then just say something in the group/server. The bot will reply with the chat id.
+## 🛠️ Tech Stack
 
-```javascript
-const bitprophet = require('bitprophet')
-bitprophet.options({
-    telegram: {
-        token: "YOUR_TELEGRAM_BOT_TOKEN"
-    },
-    discord: {
-        token: "YOUR_DISCORD_BOT_TOKEN"
-    }
-})
-bitprophet.listenToChatId()
-```
+### 🌐 Frontend
+- React (Vite) + TailwindCSS
+- Recharts for data visualization
+- React Circular Progressbar for visual goals
 
-![Chat ID](https://github.com/andresilvasantos/bitprophet/raw/master/pres/chat_id.png)
+### 🔧 Backend
+- Node.js + Express.js
+- MongoDB with Mongoose ODM
+- JWT Authentication for secure login
+- bcrypt.js for password hashing
 
-#### Getting Started
-This is the code to start BitProphet. If the only thing you need is to be notified of trades, you're done.
 
-```javascript
-const bitprophet = require('bitprophet')
-bitprophet.options({
-    binance: {
-        key: "YOUR_BINANCE_API_KEY",
-        secret: "YOUR_BINANCE_API_SECRET"
-    },
-    telegram: {
-        chatId: "YOUR_TELEGRAM_GROUP_ID",
-        token: "YOUR_TELEGRAM_BOT_TOKEN"
-    },
-    discord: {
-        chatId: "YOUR_DISCORD_CHANNEL_ID",
-        token: "YOUR_DISCORD_BOT_TOKEN"
-    }
-})
+# How to install and run?
+- Go to 'Code' then clone it using git clone <copied-link>
+- open folder in IDE of your choice
+- open terminal
+- type 'npm install' to install dependencies
+- type 'npm run dev'
 
-bitprophet.start()
-```
+# If you have no GitHub yet, try this:
+- Go to Release then click Source Code (zip)
+- then extract to destination folder
+- open folder in IDE of your choice
+- open terminal
+- type 'npm install' to install dependencies
+- type 'npm run dev'
 
-You should now see a message in Telegram/Discord telling you BitProphet has started.
+# Config
+- declare your variables first in dotenv
+- Initialize JWT Secret, Expiry date, and your Gemini API Key. Use the experimental one if you want free api
+- Get Ninjas API Key for Exercise and USDA API Key for Food search
 
-In Telegram/Discord type __list__ and you'll see all the available strategies listed with the respective ids.
-If a strategy listed has the [PT] prefix, it means it has Paper Trading active.
-To start a strategy, just type __start strategy_id__. For example, __start buydip__.
+# To All users
+- This is totally free for now, you can improve it if you want but this project is for my school. I also use it as my own fitness app so that I can track my own progress
+- Sorry for the UI I don't have time for design, I just want to prioritize functionalities. Maybe soon I can improve the UI.
 
-![Getting Started](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/getting_started.png)
+# Bugs report
+- no bugs yet as of 03/13/25
 
-#### Adding Strategies
-Add the following option naming a new directory for your strategies.
+  
 
-```javascript
-bitprophet.options({
-    strategiesDir: "./path/my/strategies"
-})
-```
-
-Create *index.js* inside that folder with the configuration for all your strategies
-```javascript
-module.exports = {
-    strategies: {
-        alertsbb: {
-            name: "Alerts Bollinger Bands",
-            targetMarket: "BTC"
-        },
-        quickdip: {
-            name: "Quick Dip",
-            //buyAmountMarket: 0.012,
-            buyPercentageAccount: 0.01,
-            profitTarget: 1.4,
-            maxLoss: 0.8,
-            maxTradingPairs: 4,
-            targetMarket: "BTC"
-        },
-        ichitest: {
-            name: "Ichimoku Test",
-            paperTrading: true,
-            buyAmountMarket: 0.012,
-            profitTarget: 1.4,
-            maxTradingPairs: 8,
-            targetMarket: "BTC",
-            excludeTokens: ["NEO", "TRX"]
-        },
-        //...
-    }
-}
-```
-
-Create your strategies based on the examples.
-
-#### Chat Bots Commands
-
-* __help__ | __h__ - Show all available commands
-* __status__ | __st__ - Show version and status
-* __account__ | __total__ | __ttl__ - Show total balance in BTC and USDT, plus BNB amount
-* __profits__ | __%__ - Show profits
-* __profits +__ | __% +__ - Show profits per pair
-* __left__ | __l__ - Show trades left
-* __sell token__ | __exit token__  - Sell token, if it's currently trading
-* __sell token price__ | __exit token price__ - Sell token@price, if it's currently trading
-* __cancel token__ - Cancel currently trading token
-* __orders__ | __o__ - Show open orders
-* __orders token__ | __o token__ - Show open orders for the given token
-* __start strategyId__ - Start strategy
-* __stop strategyId__ - Stop strategy
-* __list__ - Show available strategies
-* __list strategyId__ - Show valid / trading pairs for the given strategy
-* __token__ | __tokenmarket__ - Show price for the specified token, BTC market default. (e.g. ada, adaeth)
-* __pause__ - Pause system (ongoing trades won't be paused)
-* __restart__ - Kill BitProphet's process. Useful when using a keep alive process manager like [pm2](https://github.com/Unitech/pm2).
-
-![Profits Discord](https://github.com/insionCEO/CryptoTradingPlatform-Binance-API/raw/master/pres/chat_profits.png)
-
-#### Adding Custom Commands
-Add the following option naming a new directory for your commands.
-
-```javascript
-bitprophet.options({
-    commandsCustomDir: "./path/my/commands"
-})
-```
-
-Create *index.js* inside that folder with the configuration for all your commands
-```javascript
-module.exports = {
-    commands: {
-        test: {
-            triggers: ["test", "t"]
-            description: "Just a test command"
-        },
-        //...
-    }
-}
-```
-
-Create in the same directory *test.js* and code it based on the examples.
-
----
-
-Thank you to all contributors.
